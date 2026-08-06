@@ -1,69 +1,194 @@
-# Fundamentos de Python: Clases, Objetos y Encapsulación
+# 🐍 Programación Orientada a Objetos en Python
 
-Proyecto desarrollado para la actividad de SENA (ADSO) sobre Programación Orientada
-a Objetos en Python, aplicando los conceptos de clase, objeto y encapsulación
-a través de ejemplos replicados, dos talleres independientes y un reto integrador.
+Repositorio correspondiente a la actividad **Programación Orientada a Objetos (POO)** del programa **Tecnología en Análisis y Desarrollo de Software (ADSO)** del **SENA**.
 
-## Estructura del repositorio
+---
 
-```
-proyecto-poo-python/
+# 📖 Descripción
+
+Este proyecto reúne los ejercicios desarrollados para comprender los fundamentos de la **Programación Orientada a Objetos (POO)** en Python.
+
+A través de ejemplos guiados, talleres y un reto integrador se aplican conceptos como:
+
+- Clases
+- Objetos
+- Atributos
+- Métodos
+- Encapsulación
+- Relaciones entre clases
+- Organización de proyectos orientados a objetos
+
+---
+
+# 📂 Estructura del proyecto
+
+```text
+Proyecto_POO_Python/
+│
 ├── ejemplos_replicados/
-│   ├── ejemplo_clase_objeto.py       # Clase Persona: clase y objeto básicos
-│   └── ejemplo_encapsulacion.py      # Clase CuentaBancaria: encapsulación básica
-├── taller_clases_objetos/
-│   └── taller_clases_objetos.py      # Clase Vehiculo: clases, atributos y objetos
-├── taller_encapsulacion/
-│   └── taller_encapsulacion.py       # Clase Empleado: atributo privado + @property
+│   ├── clase_objeto.py
+│   └── encapsulacion.py
+│
 ├── reto_sistema_prestamos/
-│   ├── equipo.py                     # Clase Equipo
-│   ├── usuario.py                    # Clase Usuario
-│   ├── prestamo.py                   # Clase Prestamo
-│   ├── sistema_prestamos.py          # Gestión de colecciones y operaciones
-│   └── main.py                       # Ejecución del flujo completo
+│   ├── equipo.py
+│   ├── usuario.py
+│   ├── prestamo.py
+│   ├── sistema_prestamos.py
+│   └── main.py
+│
+├── taller_clases_objetos/
+│   └── clases_objetos.py
+│
+├── taller_encapsulacion/
+│   └── taller_encapsulacion.py
+│
 └── README.md
 ```
 
-## Diseño de clases y encapsulación
+---
 
-- **Ejemplos replicados:** muestran la base de POO en Python: definición de una
-  clase (`Persona`), instanciación de objetos y, en `CuentaBancaria`, el uso de
-  un atributo privado (`__saldo`) que solo puede modificarse mediante métodos
-  controlados (`depositar`, `retirar`).
-- **Taller de Clases y Objetos:** la clase `Vehiculo` practica atributos,
-  métodos de instancia y la creación de varios objetos independientes.
-- **Taller de Encapsulación:** la clase `Empleado` encapsula el salario con
-  doble guion bajo (`__salario`) y expone su acceso controlado mediante
-  `@property` y un `setter` que valida que el valor no sea negativo.
-- **Reto — Sistema de Préstamos de Equipos:**
-  - `Equipo`: encapsula `disponible`, ya que ese estado no debe cambiar
-    libremente desde fuera de la clase, solo a través de `marcar_prestado()`
-    y `marcar_disponible()`.
-  - `Usuario`: datos básicos de la persona que solicita el préstamo.
-  - `Prestamo`: relaciona un `Equipo` con un `Usuario` y encapsula el
-    `estado` (Activo/Devuelto), modificable solo mediante `cerrar_prestamo()`.
-  - `SistemaPrestamos`: organiza todo en colecciones (`dict` para equipos y
-    usuarios, `list` para préstamos) y expone los métodos para registrar,
-    consultar, modificar y devolver préstamos, validando reglas de negocio
-    como que un equipo no disponible no pueda volver a prestarse.
+# 📚 Contenido del proyecto
 
-## Instrucciones de ejecución
+## 🟢 Ejemplos replicados
 
-Cada script se ejecuta de forma independiente con Python 3, sin dependencias
-externas:
+Se desarrollan ejemplos básicos para comprender la estructura de una clase y el funcionamiento de la encapsulación.
+
+### Archivos
+
+- `clase_objeto.py`
+- `encapsulacion.py`
+
+### Conceptos aplicados
+
+- Definición de clases
+- Creación de objetos
+- Constructores (`__init__`)
+- Métodos
+- Encapsulación mediante atributos privados (`__atributo`)
+
+---
+
+## 🟡 Taller de Clases y Objetos
+
+Se desarrolla una clase `Vehiculo` con el objetivo de practicar:
+
+- Atributos
+- Métodos
+- Creación de múltiples objetos
+- Independencia entre instancias
+
+**Archivo**
+
+```text
+clases_objetos.py
+```
+
+---
+
+## 🔵 Taller de Encapsulación
+
+Se implementa la clase `Empleado`, aplicando el principio de encapsulación mediante atributos privados.
+
+### Conceptos trabajados
+
+- Atributos privados
+- Métodos Getter y Setter
+- Decorador `@property`
+- Validación de datos
+
+**Archivo**
+
+```text
+taller_encapsulacion.py
+```
+
+---
+
+## 🔴 Reto Integrador – Sistema de Préstamos de Equipos
+
+El reto consiste en desarrollar un sistema para administrar préstamos de equipos tecnológicos utilizando Programación Orientada a Objetos.
+
+### Clases implementadas
+
+### 📦 Equipo
+
+Representa cada equipo disponible para préstamo.
+
+Responsabilidades:
+
+- Registrar información del equipo.
+- Controlar su disponibilidad.
+- Cambiar su estado mediante métodos controlados.
+
+---
+
+### 👤 Usuario
+
+Representa la persona que solicita un préstamo.
+
+Responsabilidades:
+
+- Almacenar la información básica del usuario.
+- Identificar al solicitante del préstamo.
+
+---
+
+### 📄 Prestamo
+
+Relaciona un usuario con un equipo.
+
+Responsabilidades:
+
+- Registrar préstamos.
+- Controlar el estado del préstamo.
+- Gestionar la devolución del equipo.
+
+---
+
+### 🖥️ SistemaPrestamos
+
+Es la clase encargada de administrar todo el sistema.
+
+Funciones principales:
+
+- Registrar equipos.
+- Registrar usuarios.
+- Crear préstamos.
+- Validar disponibilidad.
+- Registrar devoluciones.
+- Consultar información del sistema.
+
+---
+
+# ▶️ Cómo ejecutar el proyecto
+
+Cada archivo puede ejecutarse de manera independiente.
 
 ```bash
-python3 ejemplos_replicados/ejemplo_clase_objeto.py
-python3 ejemplos_replicados/ejemplo_encapsulacion.py
-python3 taller_clases_objetos/taller_clases_objetos.py
-python3 taller_encapsulacion/taller_encapsulacion.py
+py ejemplos_replicados/clase_objeto.py
+
+py ejemplos_replicados/encapsulacion.py
+
+py taller_clases_objetos/clases_objetos.py
+
+py taller_encapsulacion/taller_encapsulacion.py
+```
+
+Para ejecutar el reto principal:
+
+```bash
 cd reto_sistema_prestamos
-python3 main.py
+
+py main.py
 ```
 
-## Ejemplo de salida en consola (reto integrador)
+> En algunos sistemas puede utilizarse `python` en lugar de `py`.
 
-```
+---
+
+# 💻 Ejemplo de ejecución
+
+```text
 --- Registro de equipos ---
 Equipo registrado: Portátil Dell
 Equipo registrado: Videobeam Epson
@@ -72,7 +197,7 @@ Equipo registrado: Videobeam Epson
 Usuario registrado: Camila Torres
 Usuario registrado: Jorge Ríos
 
---- Equipos ---
+--- Equipos registrados ---
 [E001] Portátil Dell (Computador) - Disponible
 [E002] Videobeam Epson (Proyector) - Disponible
 
@@ -85,28 +210,45 @@ Préstamo #1 | Equipo: Portátil Dell | Usuario: Camila Torres | Estado: Activo
 --- Intento de préstamo duplicado ---
 El equipo no está disponible.
 
---- Devolución ---
+--- Devolución del equipo ---
 Equipo devuelto: Portátil Dell
 
---- Estado final de equipos ---
+--- Estado final de los equipos ---
 [E001] Portátil Dell (Computador) - Disponible
 [E002] Videobeam Epson (Proyector) - Disponible
 ```
 
-*(Reemplaza este bloque por capturas de pantalla reales de tu consola antes de
-entregar, tal como lo pide la rúbrica.)*
+---
 
-## Reflexión personal
+# 🛠️ Tecnologías utilizadas
 
-Durante este proyecto entendí de forma más práctica qué significa encapsular
-un atributo y por qué no es solo "ponerle dos guiones bajos al nombre": la
-idea es proteger los datos que pueden dejar el sistema en un estado
-inconsistente si se modifican sin control, como la disponibilidad de un
-equipo o el estado de un préstamo. Trabajar con varias clases relacionadas
-entre sí (Equipo, Usuario, Préstamo) también me ayudó a ver cómo se organiza
-un sistema pequeño usando diccionarios y listas en vez de solo variables
-sueltas. El mayor reto fue decidir en qué clase debía vivir cada
-responsabilidad, por ejemplo, si la validación de disponibilidad debía estar
-en `Equipo` o en `SistemaPrestamos`; terminé dejando el estado en `Equipo` y
-la lógica de negocio (validar antes de prestar) en `SistemaPrestamos`, lo que
-me dejó más claro el principio de responsabilidad de cada clase.
+| Herramienta | Uso |
+|------------|-----|
+| 🐍 Python 3 | Desarrollo del proyecto |
+| Git | Control de versiones |
+| GitHub | Repositorio remoto |
+| Visual Studio Code | Editor de código |
+
+---
+
+# 🎯 Objetivo del proyecto
+
+Aplicar los principios fundamentales de la Programación Orientada a Objetos mediante el desarrollo de ejemplos, talleres y un sistema funcional de préstamos de equipos, fortaleciendo el uso de clases, objetos, encapsulación y organización del código.
+
+---
+
+# 💡 Reflexión
+
+Durante el desarrollo de este proyecto comprendí que la encapsulación no consiste únicamente en declarar atributos privados, sino en proteger la información para garantizar que solo pueda modificarse mediante métodos controlados.
+
+Además, trabajar con varias clases relacionadas entre sí me permitió entender mejor cómo dividir responsabilidades dentro de una aplicación y cómo cada clase cumple una función específica para mantener un código más organizado, reutilizable y fácil de mantener.
+
+---
+
+# 👩‍💻 Autor
+
+**Esthefany Valentina Chávez Parra**
+
+**Tecnología en Análisis y Desarrollo de Software (ADSO)**
+
+**SENA**

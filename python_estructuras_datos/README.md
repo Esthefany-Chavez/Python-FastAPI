@@ -1,195 +1,265 @@
-# Proyecto - Estructuras de Datos en Python
+# 🐍 Estructuras de Datos en Python
+
+Repositorio correspondiente a la actividad **Estructuras de Datos en Python**, desarrollada como parte del programa **Tecnología en Análisis y Desarrollo de Software (ADSO)** del **SENA**.
 
 ---
 
-# Descripción del proyecto
+# 📖 Descripción
 
-Este proyecto fue desarrollado como evidencia de aprendizaje del módulo **Estructuras de Datos en Python**.
+Este proyecto reúne los ejercicios y retos desarrollados durante el módulo **Estructuras de Datos en Python**.
 
-Su objetivo es estudiar y aplicar las principales estructuras de datos del lenguaje Python mediante la realización de ejemplos prácticos y la solución de cinco retos propuestos por el instructor.
+Su objetivo es comprender el funcionamiento de las principales estructuras de datos que ofrece Python y aplicarlas mediante ejercicios prácticos y situaciones similares a problemas reales.
 
-El proyecto está organizado por módulos para facilitar su comprensión y mantenimiento.
+Durante el desarrollo del proyecto se trabajó con:
+
+- Listas
+- Tuplas
+- Diccionarios
+- Conjuntos
+- Comprehensions
 
 ---
 
-# Estructura del proyecto
+# 📂 Estructura del proyecto
 
 ```text
 python_estructuras_datos/
-│── README.md
 │
-│── modulo1_listas/
+├── images/
+│   ├── comprehensions.png
+│   ├── conjuntos.png
+│   ├── diccionarios.png
+│   ├── listas.png
+│   └── tuplas.png
+│
+├── modulo1_listas/
 │   └── reto01.py
 │
-│── modulo2_tuplas/
+├── modulo2_tuplas/
 │   └── reto02.py
 │
-│── modulo3_diccionarios/
+├── modulo3_diccionarios/
 │   └── reto03.py
 │
-│── modulo4_conjuntos/
+├── modulo4_conjuntos/
 │   └── reto04.py
 │
-│── modulo5_comprehensions/
+├── modulo5_comprehensions/
 │   └── reto05.py
 │
-│── images/
+├── images/
 │   ├── listas.png
 │   ├── tuplas.png
 │   ├── diccionarios.png
 │   ├── conjuntos.png
 │   └── comprehensions.png
 │
-
+└── README.md
 ```
 
 ---
 
-# Temas aprendidos
+# 📚 Contenido del proyecto
 
-## Módulo 1 - Listas
+## 🟢 Módulo 1 - Listas
 
-En este módulo se estudiaron las listas como estructuras de datos ordenadas y mutables. Se aprendieron los siguientes temas:
+Las listas son estructuras de datos ordenadas y mutables que permiten almacenar múltiples elementos.
 
-- Creación de listas.
-- Slicing.
-- Métodos de listas.
-- Recorrido de listas.
-- Modificación de elementos.
-- Copias de listas.
+### Temas trabajados
 
-### Reto desarrollado
-
-Sistema de gestión de inventario utilizando listas anidadas.
-
----
-
-## Módulo 2 - Tuplas
-
-En este módulo se trabajó con las tuplas, estructuras ordenadas e inmutables.
-
-Temas vistos:
-
-- Inmutabilidad.
-- Creación de tuplas.
-- Acceso a elementos.
-- Desempaquetado.
-- Hashabilidad.
+- Creación de listas
+- Slicing
+- Métodos de listas
+- Recorrido de listas
+- Modificación de elementos
+- Copias de listas
 
 ### Reto desarrollado
 
-Sistema de catálogo de películas.
+📦 Sistema de gestión de inventario utilizando listas anidadas.
 
 ---
 
-## Módulo 3 - Diccionarios
+## 🟡 Módulo 2 - Tuplas
 
-En este módulo se aprendió el manejo de pares clave-valor y diccionarios anidados.
+Las tuplas permiten almacenar colecciones ordenadas cuyos elementos no pueden modificarse.
 
-Temas vistos:
+### Temas trabajados
 
-- Clave-Valor.
-- Operaciones CRUD.
-- Iteración.
-- Comprehensions.
-- Diccionarios anidados.
+- Inmutabilidad
+- Creación de tuplas
+- Acceso a elementos
+- Desempaquetado
+- Hashabilidad
 
 ### Reto desarrollado
 
-Análisis de ventas por región.
+🎬 Sistema de catálogo de películas.
 
 ---
 
-## Módulo 4 - Conjuntos
+## 🔵 Módulo 3 - Diccionarios
 
-En este módulo se estudiaron los conjuntos para trabajar con elementos únicos y operaciones de teoría de conjuntos.
+Se estudió el manejo de estructuras basadas en pares clave-valor.
 
-Temas vistos:
+### Temas trabajados
 
-- Unicidad.
-- Operaciones entre conjuntos.
-- Métodos de los conjuntos.
-- Operadores.
-- `isdisjoint()`.
+- Clave - Valor
+- Operaciones CRUD
+- Iteración
+- Dictionary Comprehension
+- Diccionarios anidados
 
 ### Reto desarrollado
 
-Análisis de catálogos de tiendas y recomendaciones de películas.
+📊 Análisis de ventas por región.
 
 ---
 
-## Módulo 5 - Comprehensions
+## 🟣 Módulo 4 - Conjuntos
 
-En este módulo se aprendió a crear colecciones de forma más eficiente mediante comprehensions.
+Los conjuntos permiten trabajar con elementos únicos y operaciones de teoría de conjuntos.
 
-Temas vistos:
+### Temas trabajados
 
-- List Comprehension.
-- Dict Comprehension.
-- Set Comprehension.
-- Filtros.
-- Rendimiento.
+- Unicidad
+- Operaciones entre conjuntos
+- Métodos
+- Operadores
+- `isdisjoint()`
 
 ### Reto desarrollado
 
-Analizador de ventas utilizando List, Dict y Set Comprehensions.
+🎥 Análisis de catálogos de tiendas y recomendaciones de películas.
 
 ---
 
-# Retos resueltos
+## 🔴 Módulo 5 - Comprehensions
 
-- Gestión de inventario
-- Sistema de películas
-- Análisis de ventas
-- Tiendas y películas
-- Analizador de ventas
+Las comprehensions permiten construir colecciones de manera más eficiente y con un código más limpio.
+
+### Temas trabajados
+
+- List Comprehension
+- Dict Comprehension
+- Set Comprehension
+- Filtros
+- Optimización del código
+
+### Reto desarrollado
+
+📈 Analizador de ventas utilizando List, Dict y Set Comprehensions.
 
 ---
 
-# Evidencias de ejecución
+# 🎯 Retos desarrollados
+
+- 📦 Gestión de inventario
+- 🎬 Sistema de catálogo de películas
+- 📊 Análisis de ventas por región
+- 🎥 Catálogos de tiendas y recomendaciones
+- 📈 Analizador de ventas mediante Comprehensions
+
 ---
 
-### Módulo 1 - Listas
+# 🖼️ Evidencias de ejecución
+
+## 🟢 Módulo 1 - Listas
 
 ![Listas](images/listas.png)
 
-### Módulo 2 - Tuplas
+---
+
+## 🟡 Módulo 2 - Tuplas
 
 ![Tuplas](images/tuplas.png)
 
-### Módulo 3 - Diccionarios
+---
+
+## 🔵 Módulo 3 - Diccionarios
 
 ![Diccionarios](images/diccionarios.png)
 
-### Módulo 4 - Conjuntos
+---
+
+## 🟣 Módulo 4 - Conjuntos
 
 ![Conjuntos](images/conjuntos.png)
 
-### Módulo 5 - Comprehensions
+---
+
+## 🔴 Módulo 5 - Comprehensions
 
 ![Comprehensions](images/comprehensions.png)
 
 ---
 
-# Tecnologías utilizadas
+# 🚀 Requisitos
 
-- Python 3
-- Visual Studio Code
+- Python 3.x
+- Visual Studio Code (o cualquier editor compatible)
 - Git
 - GitHub
 
 ---
 
-# Reflexión personal
+# ▶️ Cómo ejecutar los ejercicios
 
-Desarrollando la actividad repase mis conocimientos sobre las estructuras de datos importantes de Python. Repase como del mismo modo reaprendí cuándo utilizar listas, tuplas, diccionarios y conjuntos según las necesidades del problema.
+Cada reto puede ejecutarse desde la carpeta principal del proyecto.
 
-También comprendí el uso de las comprehensions para escribir código más limpio, corto y eficiente.
+Ejemplo:
 
-Al hacer los retos pude aplicar estos conceptos en situaciones similares a casos reales, mejorando mi lógica de programación y la organización del código.
+```bash
+py modulo1_listas/reto01.py
+```
+
+También puedes utilizar:
+
+```bash
+python modulo1_listas/reto01.py
+```
+
+Repitiendo la misma estructura para los demás módulos.
 
 ---
 
-# Conclusión
+# 🛠️ Tecnologías utilizadas
 
-Este proyecto permitió consolidar los conocimientos adquiridos sobre estructuras de datos en Python mediante ejercicios prácticos y retos de programación, reforzando las habilidades necesarias para desarrollar soluciones organizadas, eficientes y fáciles de mantener.
+| Herramienta | Uso |
+|-------------|-----|
+| 🐍 Python 3 | Desarrollo de los ejercicios |
+| Git | Control de versiones |
+| GitHub | Repositorio remoto |
+| Visual Studio Code | Editor de código |
+
+---
+
+# 🎯 Objetivo del proyecto
+
+Aplicar las principales estructuras de datos de Python mediante ejercicios prácticos que permitan fortalecer la lógica de programación y desarrollar soluciones organizadas, eficientes y fáciles de mantener.
+
+---
+
+# 💡 Reflexión
+
+Durante el desarrollo de esta actividad reforcé mis conocimientos sobre las estructuras de datos más importantes de Python y comprendí en qué situaciones resulta más adecuado utilizar listas, tuplas, diccionarios o conjuntos según las necesidades del problema.
+
+Además, aprendí a utilizar las comprehensions para escribir código más limpio, corto y eficiente, mejorando tanto la organización como la legibilidad de los programas.
+
+Los retos propuestos me permitieron aplicar estos conceptos en escenarios similares a casos reales, fortaleciendo mi lógica de programación y mi capacidad para diseñar soluciones más estructuradas.
+
+---
+
+# ✅ Conclusión
+
+Este proyecto permitió consolidar los conocimientos adquiridos sobre estructuras de datos en Python mediante ejercicios prácticos y retos de programación, fortaleciendo las habilidades necesarias para desarrollar soluciones organizadas, eficientes y fáciles de mantener.
+
+---
+
+# 👩‍💻 Autor
+
+**Esthefany Valentina Chávez Parra**
+
+**Tecnología en Análisis y Desarrollo de Software (ADSO)**
+
+**SENA**

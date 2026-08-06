@@ -1,19 +1,31 @@
-# Fundamentos de Python
+# 🐍 Fundamentos de Python
 
-## Aprendiz
+Repositorio correspondiente a las prácticas desarrolladas durante las primeras sesiones del curso **Fundamentos de Python**, donde se estudian los conceptos esenciales del lenguaje mediante ejercicios prácticos.
 
-**Esthefany Valentina Chávez Parra**
+---
 
-## Descripción
+## 📖 Descripción
 
-Este repositorio contiene los laboratorios desarrollados durante las secciones 1 a 4 de la guía **Fundamentos de Python**. En cada sección se aplican los conceptos básicos del lenguaje, incluyendo la función `print()`, literales, variables, operadores aritméticos y de comparación, así como la manipulación básica de cadenas.
+Este proyecto reúne los laboratorios realizados durante las **sesiones 1 a 4** del curso **Fundamentos de Python**.
 
-## Estructura del proyecto
+A lo largo de estas prácticas se aplican los conceptos básicos del lenguaje, entre ellos:
 
-```
+- Función `print()`
+- Literales
+- Variables
+- Operadores aritméticos
+- Operadores de comparación
+- Expresiones
+- Manipulación básica de cadenas
+- Desarrollo de programas sencillos
+
+---
+
+## 📂 Estructura del proyecto
+
+```text
 fundamentos_python/
 │
-├── README.md
 ├── Sesion1/
 │   ├── hola_mundo.py
 │   ├── print_argumentos.py
@@ -30,17 +42,29 @@ fundamentos_python/
 │   ├── convertidor_simple.py
 │   └── operadores_expresiones.py
 │
-└── src/
-    └── puntaje_final_jugador.py
+├── src
+│   └── puntaje_final_jugador.py
+│
+├── README.md
 ```
 
 ---
 
-# Sección 1 – Hola Mundo
+# 📚 Contenido del proyecto
 
-En esta sección se practican los conceptos básicos de la función `print()`, el uso de argumentos, separadores, salto de línea y formato de salida.
+## 🟢 Sesión 1 - Hola Mundo
 
-Archivos:
+En esta sesión se practican los primeros programas en Python utilizando la función `print()`.
+
+### Temas trabajados
+
+- Impresión de mensajes
+- Uso de argumentos
+- Separadores
+- Saltos de línea
+- Formato de salida
+
+**Archivos**
 
 - `hola_mundo.py`
 - `print_argumentos.py`
@@ -48,167 +72,82 @@ Archivos:
 
 ---
 
-# Sección 2 – Literales
+## 🟡 Sesión 2 - Literales
 
-En esta sección se utilizan diferentes tipos de literales, especialmente cadenas de texto, para mostrar información en pantalla.
+Se utilizan distintos tipos de literales, especialmente cadenas de texto, para mostrar información en pantalla.
 
-Archivo:
+**Archivo**
 
 - `literales_cadenas.py`
 
 ---
 
-# Sección 3 – Operadores matemáticos
+## 🔵 Sesión 3 - Operadores matemáticos
 
-En esta práctica se utilizan los operadores aritméticos de Python.
+Se aplican los operadores aritméticos básicos de Python.
 
-## Variables utilizadas
+### Variables utilizadas
 
 ```python
 a = 20
 b = 6
 ```
 
-## Operaciones realizadas
+### Operaciones realizadas
 
-### Suma
+| Operación | Expresión | Resultado |
+|-----------|-----------|-----------:|
+| Suma | `a + b` | 26 |
+| Resta | `a - b` | 14 |
+| Multiplicación | `a * b` | 120 |
+| División | `a / b` | 3.3333333333333335 |
+| División entera | `a // b` | 3 |
+| Módulo | `a % b` | 2 |
+| Potencia | `a ** b` | 64000000 |
 
-```python
-a + b
-```
+### ¿Qué se aprendió?
 
-Resultado
-
-```
-26
-```
-
----
-
-### Resta
-
-```python
-a - b
-```
-
-Resultado
-
-```
-14
-```
+Se declararon variables numéricas y se utilizaron los principales operadores aritméticos de Python para comprender su funcionamiento mediante la impresión de resultados.
 
 ---
 
-### Multiplicación
+## 🟣 Sesión 4 - Variables y expresiones
 
-```python
-a * b
-```
+Durante esta sesión se trabajó con:
 
-Resultado
+- Declaración de variables
+- Expresiones matemáticas
+- Conversión de datos
+- Operaciones básicas
 
-```
-120
-```
-
----
-
-### División
-
-```python
-a / b
-```
-
-Resultado
-
-```
-3.3333333333333335
-```
-
----
-
-### División entera
-
-```python
-a // b
-```
-
-Resultado
-
-```
-3
-```
-
----
-
-### Módulo (Residuo)
-
-```python
-a % b
-```
-
-Resultado
-
-```
-2
-```
-
----
-
-### Potencia
-
-```python
-a ** b
-```
-
-Resultado
-
-```
-64000000
-```
-
----
-
-## Lógica utilizada
-
-Se declararon dos variables numéricas (`a` y `b`) y se aplicaron los operadores aritméticos de Python para demostrar su funcionamiento. Cada operación imprime el resultado correspondiente utilizando la función `print()`.
-
----
-
-# Sección 4 – Variables
-
-En esta sección se trabaja con variables, expresiones y un convertidor simple.
-
-Archivos:
+**Archivos**
 
 - `variables.py`
 - `convertidor_simple.py`
 - `operadores_expresiones.py`
 
-Los ejercicios permiten comprender cómo almacenar información en variables, realizar operaciones matemáticas y mostrar los resultados.
-
 ---
 
-# Programa adicional
+# 🎯 Programa adicional
 
-## puntaje_final_jugador.py
+## Puntaje final de un jugador
 
 Este programa solicita al usuario:
 
-- Nombre del jugador.
-- Cantidad de victorias.
-- Cantidad de empates.
-- Cantidad de derrotas.
+- Nombre del jugador
+- Cantidad de victorias
+- Cantidad de empates
+- Cantidad de derrotas
 
-Posteriormente calcula el puntaje final utilizando la fórmula:
+Posteriormente calcula el puntaje mediante la fórmula:
 
-```
+```text
 Puntaje = (Victorias × 3) + Empates
 ```
 
-### Ejemplo de ejecución
+### Ejemplo
 
-```
+```text
 Nombre del jugador: Gabriel
 Victorias: 29
 Empates: 3
@@ -220,7 +159,7 @@ Puntaje final: 90
 
 ---
 
-# Requisitos
+# 🚀 Requisitos
 
 - Python 3.x
 - Visual Studio Code (opcional)
@@ -229,39 +168,41 @@ Puntaje final: 90
 
 ---
 
-# Cómo ejecutar los programas
+# ▶️ Ejecución
 
-Desde la terminal, ubicarse en la carpeta correspondiente y ejecutar:
-
-```bash
-python nombre_del_archivo.py
-```
-
-o en Windows:
-
-```bash
-py nombre_del_archivo.py
-```
-
-Ejemplo:
+Desde la terminal:
 
 ```bash
 cd Sesion1
 py hola_mundo.py
 ```
 
----
+o
 
-# Tecnologías utilizadas
-
-- Python 3
-- Git
-- GitHub
-- Visual Studio Code
+```bash
+python nombre_del_archivo.py
+```
 
 ---
 
-# Autor
+# 🛠️ Tecnologías utilizadas
+
+| Herramienta | Uso |
+|-------------|-----|
+| 🐍 Python 3 | Desarrollo de los programas |
+| Git | Control de versiones |
+| GitHub | Repositorio remoto |
+| Visual Studio Code | Editor de código |
+
+---
+
+# 📌 Objetivo del proyecto
+
+Aplicar los fundamentos del lenguaje Python mediante ejercicios prácticos que permitan comprender la sintaxis, el manejo de variables, operadores, expresiones y la construcción de programas básicos.
+
+---
+
+# 👩‍💻 Autor
 
 **Esthefany Valentina Chávez Parra**
 
