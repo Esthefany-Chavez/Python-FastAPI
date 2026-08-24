@@ -31,9 +31,8 @@ Los principales conceptos implementados son:
 ```text
 device_systems/
 │
-├── .venv/
-│
 ├── app/
+│   ├── main.py
 │   │
 │   ├── routes/
 │   │   └── user_routes.py
@@ -43,13 +42,16 @@ device_systems/
 │
 ├── docs/
 │   └── capturas/
-│       ├── swagger.png
-│       ├── get-users.png
+│       ├── errores.png
+│       ├── filtros-users.png
 │       ├── get-user-id.png
+│       ├── get-users.png
+│       ├── headers.png
 │       ├── post-user.png
-│       ├── validaciones.png
-│       └── errores.png
+│       ├── swagger.png
+│       └── validaciones.png
 │
+├── .gitignore
 ├── README.md
 └── requirements.txt
 ```
