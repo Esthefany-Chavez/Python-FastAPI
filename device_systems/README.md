@@ -108,8 +108,6 @@ device_systems/
 └── requirements.txt
 ```
 
-> **Nota:** Las carpetas `.venv/` y `__pycache__/` existen durante el desarrollo local, pero no se incluyen en el repositorio de GitHub debido a las reglas definidas en `.gitignore`.
-
 ---
 
 # 🏗️ Organización del proyecto
