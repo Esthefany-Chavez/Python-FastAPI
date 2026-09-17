@@ -1,9 +1,13 @@
+from typing import Literal
+
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 
 from app.database.connection import get_db
 from app.dependencies.user_dependencies import get_user_or_404
+from app.schemas.loan_schema import LoanDetailResponse
 from app.schemas.user_schema import UserCreate, UserPatch, UserResponse, UserUpdate
+from app.services.loan_service import get_user_loans
 from app.services.user_service import (
     create_user,
     delete_user,
@@ -56,6 +60,19 @@ def get_user_by_email_route(email: str, db: Session = Depends(get_db)):
 )
 def get_user(user=Depends(get_user_or_404)):
     return user
+
+
+@router.get(
+    "/{user_id}/loans",
+    response_model=list[LoanDetailResponse],
+    summary="Consultar préstamos de un usuario",
+)
+def get_user_loans_route(
+    user=Depends(get_user_or_404),
+    status: Literal["active", "returned", "overdue"] | None = Query(default=None),
+    db: Session = Depends(get_db),
+):
+    return get_user_loans(db, user_id=user.id, status=status)
 
 
 @router.post(

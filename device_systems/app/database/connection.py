@@ -31,6 +31,8 @@ def get_db() -> Generator[Session, None, None]:
 
 
 def create_tables() -> None:
-    from app.models.user_model import User  #type: ignore
+    from app.models.device_model import Device  # type: ignore
+    from app.models.loan_model import Loan  # type: ignore
+    from app.models.user_model import User  # type: ignore
 
     Base.metadata.create_all(bind=engine)

@@ -5,6 +5,8 @@ from sqlalchemy import text
 from sqlalchemy.orm import Session
 
 from app.database.connection import create_tables, get_db
+from app.routes.device_routes import router as device_router
+from app.routes.loan_routes import router as loan_router
 from app.routes.user_routes import router as user_router
 
 
@@ -17,9 +19,8 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="device_systems API",
     description=(
-        "API REST para la gestión de usuarios del sistema device_systems. "
-        "Incluye operaciones CRUD, validación de datos, manejo de errores "
-        "y Dependency Injection."
+        "API REST para la gestión de usuarios, dispositivos y préstamos del sistema device_systems. "
+        "Incluye operaciones CRUD, filtros, validación de datos, joins de información y manejo de errores."
     ),
     version="2.0.0",
     lifespan=lifespan,
@@ -27,12 +28,16 @@ app = FastAPI(
         "name": "Esthefany Valentina Chávez Parra",
     },
     openapi_tags=[
-        {"name": "Users", "description": "Operaciones CRUD para la gestión de usuarios."}
+        {"name": "Users", "description": "Gestión de usuarios del sistema."},
+        {"name": "Devices", "description": "Gestión y consulta de dispositivos disponibles para préstamo."},
+        {"name": "Loans", "description": "Gestión de préstamos, devoluciones y consultas combinadas."},
     ],
 )
 
 
 app.include_router(user_router)
+app.include_router(device_router)
+app.include_router(loan_router)
 
 
 @app.middleware("http")

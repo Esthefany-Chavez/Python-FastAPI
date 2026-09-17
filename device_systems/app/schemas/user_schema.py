@@ -5,6 +5,17 @@ from pydantic import BaseModel, ConfigDict, EmailStr, Field
 
 
 class UserCreate(BaseModel):
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "name": "Ana Pérez",
+                "email": "ana@sena.edu.co",
+                "role": "user",
+                "is_active": True,
+            }
+        }
+    )
+
     name: str = Field(..., min_length=3)
     email: EmailStr
     role: Literal["admin", "support", "user"]
