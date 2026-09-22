@@ -2,6 +2,7 @@ from sqlalchemy import asc, desc
 from sqlalchemy.orm import Session
 
 from app.models.device_model import Device
+from app.models.loan_model import Loan
 
 
 def get_all_devices(
@@ -93,6 +94,9 @@ def delete_device(db: Session, device_id: int):
     device = get_device_by_id(db, device_id)
     if device is None:
         return False
+
+    if db.query(Loan.id).filter(Loan.device_id == device_id).first() is not None:
+        raise ValueError("No se puede eliminar un dispositivo con préstamos registrados")
 
     db.delete(device)
     db.commit()

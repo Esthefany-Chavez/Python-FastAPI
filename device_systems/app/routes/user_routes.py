@@ -139,7 +139,10 @@ def update_partial_user(
     response_description="Usuario eliminado correctamente",
 )
 def remove_user(user=Depends(get_user_or_404), db: Session = Depends(get_db)):
-    deleted = delete_user(db, user.id)
+    try:
+        deleted = delete_user(db, user.id)
+    except ValueError as exc:
+        raise HTTPException(status_code=409, detail=str(exc))
     if not deleted:
         raise HTTPException(status_code=404, detail="Usuario no encontrado")
     return None

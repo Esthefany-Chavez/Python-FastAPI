@@ -4,7 +4,7 @@ from fastapi import Depends, FastAPI, Request
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 
-from app.database.connection import create_tables, get_db
+from app.database.connection import get_db
 from app.routes.device_routes import router as device_router
 from app.routes.loan_routes import router as loan_router
 from app.routes.user_routes import router as user_router
@@ -12,7 +12,6 @@ from app.routes.user_routes import router as user_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    create_tables()
     yield
 
 

@@ -130,7 +130,10 @@ def update_partial_device(
     summary="Eliminar dispositivo",
 )
 def remove_device(device=Depends(get_device_or_404), db: Session = Depends(get_db)):
-    deleted = delete_device(db, device.id)
+    try:
+        deleted = delete_device(db, device.id)
+    except ValueError as exc:
+        raise HTTPException(status_code=409, detail=str(exc))
     if not deleted:
         raise HTTPException(status_code=404, detail="Dispositivo no encontrado")
     return None

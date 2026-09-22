@@ -58,21 +58,6 @@ def get_loans_details(
 
 
 @router.get(
-    "/{loan_id}",
-    response_model=LoanDetailResponse,
-    summary="Consultar préstamo por ID",
-    description="Retorna el préstamo junto con la información del usuario y del dispositivo asociado.",
-    response_description="Préstamo con datos relacionados.",
-)
-def get_loan(loan=Depends(get_loan_or_404), db: Session = Depends(get_db)):
-    rows = get_loans_with_details(db, user_id=loan.user_id, device_id=loan.device_id)
-    for item in rows:
-        if item["loan_id"] == loan.id:
-            return item
-    raise HTTPException(status_code=404, detail="Préstamo no encontrado")
-
-
-@router.get(
     "/users/{user_id}",
     response_model=list[LoanDetailResponse],
     summary="Consultar préstamos por usuario",
@@ -104,6 +89,21 @@ def get_device_loan_details(
     if device is None:
         raise HTTPException(status_code=404, detail="Dispositivo no encontrado")
     return get_device_loans(db, device_id=device_id, status=status)
+
+
+@router.get(
+    "/{loan_id}",
+    response_model=LoanDetailResponse,
+    summary="Consultar préstamo por ID",
+    description="Retorna el préstamo junto con la información del usuario y del dispositivo asociado.",
+    response_description="Préstamo con datos relacionados.",
+)
+def get_loan(loan=Depends(get_loan_or_404), db: Session = Depends(get_db)):
+    rows = get_loans_with_details(db, user_id=loan.user_id, device_id=loan.device_id)
+    for item in rows:
+        if item["loan_id"] == loan.id:
+            return item
+    raise HTTPException(status_code=404, detail="Préstamo no encontrado")
 
 
 @router.post(

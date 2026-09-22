@@ -16,18 +16,25 @@ def get_all_loans(
     search: str | None = None,
 ):
     query = db.query(Loan)
+    needs_user_join = user_email is not None or search is not None
+    needs_device_join = device_type is not None or search is not None
+
+    if needs_user_join:
+        query = query.join(User, Loan.user_id == User.id)
+    if needs_device_join:
+        query = query.join(Device, Loan.device_id == Device.id)
 
     if status is not None:
         query = query.filter(Loan.status == status)
 
     if user_email is not None:
-        query = query.join(User, Loan.user_id == User.id).filter(User.email.ilike(f"%{user_email}%"))
+        query = query.filter(User.email.ilike(f"%{user_email}%"))
 
     if device_type is not None:
-        query = query.join(Device, Loan.device_id == Device.id).filter(Device.device_type.ilike(f"%{device_type}%"))
+        query = query.filter(Device.device_type.ilike(f"%{device_type}%"))
 
     if search is not None:
-        query = query.join(User, Loan.user_id == User.id).join(Device, Loan.device_id == Device.id).filter(
+        query = query.filter(
             or_(
                 User.name.ilike(f"%{search}%"),
                 User.email.ilike(f"%{search}%"),
@@ -63,10 +70,16 @@ def get_loans_with_details(
             User.id.label("user_model_id"),
             User.name.label("user_name"),
             User.email.label("user_email"),
+            User.role.label("user_role"),
+            User.is_active.label("user_is_active"),
+            User.created_at.label("user_created_at"),
             Device.id.label("device_model_id"),
             Device.name.label("device_name"),
             Device.serial_number,
             Device.device_type,
+            Device.brand.label("device_brand"),
+            Device.is_available.label("device_is_available"),
+            Device.created_at.label("device_created_at"),
         )
         .join(User, Loan.user_id == User.id)
         .join(Device, Loan.device_id == Device.id)
@@ -111,18 +124,18 @@ def get_loans_with_details(
                 "id": row.user_model_id,
                 "name": row.user_name,
                 "email": row.user_email,
-                "role": "user",
-                "is_active": True,
-                "created_at": datetime.utcnow(),
+                "role": row.user_role,
+                "is_active": row.user_is_active,
+                "created_at": row.user_created_at,
             },
             "device": {
                 "id": row.device_model_id,
                 "name": row.device_name,
                 "serial_number": row.serial_number,
                 "device_type": row.device_type,
-                "brand": None,
-                "is_available": True,
-                "created_at": datetime.utcnow(),
+                "brand": row.device_brand,
+                "is_available": row.device_is_available,
+                "created_at": row.device_created_at,
             },
         }
         for row in rows

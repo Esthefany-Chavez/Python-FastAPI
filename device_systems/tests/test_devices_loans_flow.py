@@ -135,6 +135,51 @@ def test_filter_loans_by_status_and_device_type():
     assert len(email_filter.json()) >= 1
 
 
+def test_combined_loan_filters_return_real_related_data():
+    user_response = client.post(
+        "/users/",
+        json={"name": "Maria Gomez", "email": "maria@sena.edu.co", "role": "support", "is_active": False},
+    )
+    device_response = client.post(
+        "/devices/",
+        json={
+            "name": "Laptop Lenovo",
+            "serial_number": "LEN-COMBINED-01",
+            "device_type": "laptop",
+            "brand": "Lenovo",
+            "is_available": True,
+        },
+    )
+
+    loan_response = client.post(
+        "/loans/",
+        json={
+            "user_id": user_response.json()["id"],
+            "device_id": device_response.json()["id"],
+            "loan_date": "2026-09-17T11:00:00",
+            "status": "active",
+        },
+    )
+    assert loan_response.status_code == 201, loan_response.text
+
+    filtered = client.get(
+        "/loans/",
+        params={
+            "user_email": "maria@sena.edu.co",
+            "device_type": "laptop",
+            "search": "lenovo",
+        },
+    )
+    assert filtered.status_code == 200, filtered.text
+    assert len(filtered.json()) == 1
+
+    details = client.get("/loans/details").json()[0]
+    assert details["user"]["role"] == "support"
+    assert details["user"]["is_active"] is False
+    assert details["device"]["brand"] == "Lenovo"
+    assert details["device"]["is_available"] is False
+
+
 def test_return_loan_and_make_device_available_again():
     user_response = client.post(
         "/users/",

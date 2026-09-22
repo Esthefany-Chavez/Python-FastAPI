@@ -1,6 +1,7 @@
 from sqlalchemy import asc, desc
 from sqlalchemy.orm import Session
 
+from app.models.loan_model import Loan
 from app.models.user_model import User
 
 
@@ -86,6 +87,9 @@ def delete_user(db: Session, user_id: int):
     user = get_user_by_id(db, user_id)
     if user is None:
         return False
+
+    if db.query(Loan.id).filter(Loan.user_id == user_id).first() is not None:
+        raise ValueError("No se puede eliminar un usuario con préstamos registrados")
 
     db.delete(user)
     db.commit()
